@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/models/user_data.dart';
 import 'package:instagram_clone/models/user_mode.dart';
 import 'package:instagram_clone/screens/edit_profile_screen.dart';
+import 'package:instagram_clone/services/auth_service.dart';
 import 'package:instagram_clone/services/database_service.dart';
 import 'package:instagram_clone/utilities/constants.dart';
 import 'package:provider/provider.dart';
@@ -251,6 +252,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     Divider(),
+                    Center(
+                      child: FlatButton(
+                        onPressed: () => AuthService.logout(context),
+                        child: Text('Logout'),
+                      ),
+                    )
                   ],
                 ),
               )

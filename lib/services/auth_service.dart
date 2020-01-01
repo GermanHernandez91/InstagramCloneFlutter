@@ -23,7 +23,7 @@ class AuthService {
           "profileImageUrl": "",
         });
         Provider.of<UserData>(context).currentUserId = signedInUser.uid;
-        Navigator.pop(context);
+        // Navigator.pop(context);
       }
     } catch (e) {
       print(e);
@@ -32,13 +32,13 @@ class AuthService {
 
   static void logout(BuildContext context) {
     _auth.signOut();
-    Navigator.pushReplacementNamed(context, LoginScreen.id);
+    // Navigator.pushReplacementNamed(context, LoginScreen.id);
   }
 
   static void login(BuildContext context, String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacementNamed(context, HomeScreen.id);
+      // Navigator.pushReplacementNamed(context, HomeScreen.id);
     } catch (e) {
       print(e);
     }
