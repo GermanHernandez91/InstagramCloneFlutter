@@ -16,7 +16,6 @@ class StorageService {
       // Updating user profile image
       RegExp exp = RegExp(r'userProfile_(.*).jpg');
       photoId = exp.firstMatch(url)[1];
-      print(photoId);
     }
 
     StorageUploadTask uploadTask = storageRef
