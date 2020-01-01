@@ -8,8 +8,19 @@ class CreatePostScreen extends StatefulWidget {
 class _CreatePostScreenState extends State<CreatePostScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Create Post"),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text("Instagram",
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Billabong',
+              fontSize: 35.0,
+            )),
+      ),
+      body: Center(
+        child: Text("Create post"),
+      ),
     );
   }
 }
