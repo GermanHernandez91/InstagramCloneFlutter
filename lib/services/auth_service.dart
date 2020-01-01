@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/models/user_data.dart';
 import 'package:instagram_clone/screens/home_screen.dart';
 import 'package:instagram_clone/screens/login_screen.dart';
+import 'package:provider/provider.dart';
 
 class AuthService {
   static final _firestore = Firestore.instance;
@@ -20,6 +22,7 @@ class AuthService {
           "email": email,
           "profileImageUrl": "",
         });
+        Provider.of<UserData>(context).currentUserId = signedInUser.uid;
         Navigator.pop(context);
       }
     } catch (e) {
